@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useState, useRef, useMemo } from "react";
 import styled from "styled-components";
 import TodoItem from "./TodoItem";
 
@@ -71,9 +71,9 @@ const Filter = styled.div`
   width: 100%;
   margin: 10px auto;
 `
-function writeTodoToLocalStorage(todos) {
-  window.localStorage.setItem('todos', JSON.stringify(todos))
-}
+// function writeTodoToLocalStorage(todos) {
+//   window.localStorage.setItem('todos', JSON.stringify(todos))
+// }
 
 export default function App() {
 
@@ -90,9 +90,9 @@ export default function App() {
   const [value, setValue] = useState('')
 
   // 管理 localStorage
-  useEffect( () => {
-    writeTodoToLocalStorage(todos)
-  }, [todos])
+  // useEffect( () => {
+  //   writeTodoToLocalStorage(todos)
+  // }, [todos])
 
   // 管理 filter
   const [filter, setFilter] = useState("all");
