@@ -78,28 +78,13 @@ function writeTodoToLocalStorage(todos) {
 export default function App() {
 
   const id = useRef(1);
-  const [todos, setTodos] = useState(() => {
-    try {
-      let todoData = window.localStorage.getItem('todos') || '';
-      todoData = JSON.parse(todoData)
-      if (todoData.length === 0) {
-        todoData = []
-      } else {
-        id.current = todoData[0].id + 1
-      }
-      return todoData
-    } catch(err) {
-      console.log(err)
+  const [todos, setTodos] = useState([
+    {
+      id: 0,
+      content: '吃飯',
+      isDone: false
     }
-    // let todoData = window.localStorage.getItem('todos') || '';
-    // todoData = JSON.parse(todoData)
-    // if (todoData.length === 0) {
-    //   todoData = []
-    // } else {
-    //   id.current = todoData[0].id + 1
-    // }
-    // return todoData
-  })
+  ])
 
   // 管理 input 的值
   const [value, setValue] = useState('')
